@@ -2,8 +2,7 @@ import React from "react";
 import './Button.css'
 
 
-type ButtonProps 
-= {
+interface ButtonProps {
      value: string;
      style?: "success" | "danger"
 }
@@ -17,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({ value, style }) => {
           <>
           <button className={
                `button-style-${
+                    //Default style is success
                     style ? style : "success"
                }`
       

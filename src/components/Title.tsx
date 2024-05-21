@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 interface titleProps {
      title: string
-     gender?: string
-     age?: number
+     gender?: "male" | "female" | "other"
+     age?: number | string
 }
 
 const Title: React.FC<titleProps> = ({ title, gender, age }) => {
