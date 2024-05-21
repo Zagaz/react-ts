@@ -41,8 +41,8 @@ function App() {
       <header className="App-header">
         <Title title = "Hello World" gender = "male" age = {num}/>
         <Button value = "+1" style = "success" onClick = {addNumber}/>
-        <Button value = "-1" style = "success" onClick = {subNumber}/>
-        <Button value = "Click Me 2" style = "success" onClick = {handleClick2}/>
+        <Button value = "-1" style = "danger" onClick = {subNumber}/>
+        <Button value = "Click Me 2"  onClick = {handleClick2}/>
         <Test/>
         
   
