@@ -40,9 +40,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Title title = "Hello World" gender = "male" age = {num}/>
-        <Button value = "+1" style = "success" onClick = {addNumber}/>
-        <Button value = "-1" style = "danger" onClick = {subNumber}/>
-        <Button value = "Click Me 2"  onClick = {handleClick2}/>
+        <Button  style = "success" onClick = {addNumber}>+1</Button>
+        <Button  style = "danger" onClick = {subNumber}>-1</Button>
+        <Button  onClick = {handleClick2}>Alert Message</Button>
         <Test/>
         
   

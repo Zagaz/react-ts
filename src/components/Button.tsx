@@ -3,15 +3,15 @@ import './Button.css'
 
 
 interface ButtonProps {
-     value: string;
      style?: "success" | "danger" | "warning" | "info" | "black" | "white" | "grey"
      onClick: () => number | string | void;
+     children : React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({value, style, onClick}) => {
+const Button: React.FC<ButtonProps> = ({ style, onClick , children}) => {
     return (
         <button className={`button-style-${!style ? "grey" : style}`} 
-        onClick={onClick}>{value}</button>
+        onClick={onClick}>{children}</button>
     )
 }
 export default Button;
