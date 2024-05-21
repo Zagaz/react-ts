@@ -15,7 +15,7 @@ function debug(): void {
 const Button: React.FC<ButtonProps> = ({ value, style }) => {
      return (
           <>
-               <button className={`button-${buttonStyle}`} onClick={() => debug()}> {value} </button>
+               <button className={`button-style-${buttonStyle}`} onClick={() => debug()}> {value} </button>
           </>
      );
 }
