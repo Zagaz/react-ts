@@ -9,10 +9,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Title title = "Hello World" />
-        <Button value = "Oiii" style='light' />
-   
-
+        <Title title = "Hello World" gender = "male" age = {20}/>
+        <Button value = "Oiii" style='success'/>
+  
       </header>
     </div>
   );

@@ -1,13 +1,24 @@
 import React from 'react'
-import { Interface } from 'readline'
 
-interface titleInterface{
+
+interface titleProps {
      title: string
+     gender?: string
+     age?: number
 }
 
-const Title: React.FC<titleInterface> = ({title}) => {
+const Title: React.FC<titleProps> = ({ title, gender, age }) => {
      return (
-          <h1>{title}</h1>
+          <>
+               <h1>
+                    {`
+              ${title && title ? title : "No title"}
+              ${gender && gender}
+              ${age && age} 
+              `}
+               </h1>
+          </>
+
      )
 }
 
