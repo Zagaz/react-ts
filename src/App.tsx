@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './AppSecond.css'
 import Button from './components/Button';
 import Title from './components/Title';
 import Test from './components/Test';
@@ -38,14 +39,22 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header ">
+        <div className='app-container'>
+          <div className='app-container__top'>
         <Title title = "Hello World" gender = "male" age = {num}/>
+        </div>
+        
+        <div className='app-container__middle'>
         <Button  style = "success" onClick = {addNumber}>+1</Button>
         <Button  style = "danger" onClick = {subNumber}>-1</Button>
+        </div>
+
+        <div className='app-container__bottom'>
         <Button  onClick = {handleClick2}>Alert Message</Button>
-        <Test/>
+        </div>
         
-  
+        </div>
       </header>
     </div>
   );
