@@ -12,10 +12,6 @@ const Title: React.FC<titleProps> = ({ title, gender, age }) => {
                <h1>{`${title && title ? title : "No title"}  `}  </h1>
                <h2>{`Gender: ${gender && gender} `}</h2>
                <h3>{`Age: ${age && age}`}</h3>
-
-               
-              
-
           </>
 
      )
