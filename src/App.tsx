@@ -19,12 +19,15 @@ function App() {
 
   return (<>
     <Navbar />
-    <div>
+    <div className='buttons-container'>
       <button onClick={() => setResourceType('posts')}> Posts </button>
       <button onClick={() => setResourceType('users')}> Users </button>
       <button onClick={() => setResourceType('comments')}> Comments </button>
     </div>
+    <div className='page-title'>
     <h1>{resourceType}</h1>
+    </div>
+    <div className='card-container'>
     {
       resourceType === 'posts' && items.map((item: any) => {
         return (
@@ -38,6 +41,7 @@ function App() {
         )
       }
       )}
+
       {
       resourceType === 'users' && items.map((item: any) => {
         return (
@@ -49,6 +53,7 @@ function App() {
         )
       }
       )}
+
       {
       resourceType === 'comments' && items.map((item: any) => {
         return (
@@ -61,6 +66,8 @@ function App() {
       }
       )
       }
+      </div>
+
 
   </>
   )
