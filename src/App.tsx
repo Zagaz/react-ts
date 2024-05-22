@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 
-const App = () => {
-  return (
-    <div>App</div>
+function App() {
+  return (<>
+  <Navbar />
+  <Hero title = "The Title" subtitle = "The subtitle" />
+   
+    </>
   )
 }
 
