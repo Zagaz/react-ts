@@ -1,3 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+dark indigo #2C2C54, deep purple-gray #474787, cool gray #AAABB8, light gray #ECECEC
+*/
+
+*{
+     margin : 0;
+     padding : 0;
+     box-sizing : border-box;
+     font-family : 'Roboto', sans-serif;
+     background-color :  #3D405B;
+     color : white;
+}
+
+hr{
+     width : 100%;
+     border : 1px solid #2c2c54;
+     
+}
+p{
+     font-size : 16px;
+     color :  #2C2C54;
+
+
+}
+/*Card*/
+
+.card-container{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+
+     .card{
+          background-color : white ;
+          border-radius : 5px;
+          box-shadow : 0 10px 10px rgba(0,0,0,0.2);
+          overflow : hidden;
+          width : 300px;
+          max-width : 100%;
+          margin : 30px;
+          padding :20px;
+          h1,h2,h3,h4,h5,h6{
+               font-weight : 700;
+               color : black !important;
+               background : white;
+          }
+          p{
+               font-size : 16px;
+               color : black;
+               background : white;
+          }
+     }
+}
+
+/*buttons-container*/
+
+.buttons-container{
+     display : flex;
+     justify-content : center;
+     margin : 20px 0;
+     button{
+          background-color :  #474787;
+          color : white;
+          padding : 10px 20px;
+          border : none;
+          border-radius : 5px;
+          cursor : pointer;
+          margin : 0 10px;
+          font-size : 16px;
+          &:hover{
+               background-color : #40407a;
+          }
+     }
+}
+/*page-title*/
+.page-title{
+     text-align : center;
+     margin : 20px 0;
+     h1{
+          font-size : 24px;
+          font-weight : 700;
+          text-transform : uppercase;
+          
+
+     }
+}
