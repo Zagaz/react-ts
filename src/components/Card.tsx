@@ -1,4 +1,6 @@
 import React from 'react'
+import Thumb from './Thumb'
+
 
 interface CardProps {
      id?: number
@@ -6,24 +8,24 @@ interface CardProps {
      title?: string
      body?: string
      mail?: string
-     thumb?: string
-
+     url?: string
+     aspect?: 'square' | 'landscape' | 'portrait'
 }
 
-const Card: React.FC<CardProps> = ({ id, name, title, body, mail,thumb }) => {
+const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url, aspect }) => {
+     // temp string aspect 
+     var aspectString: string = "square";
+
+
      return (
           <>
                <div className={`card id-card-${id}`}>
-                    {thumb && <img className = "card-thumb" src={thumb} alt=""/>}
-              
+                    {url && <Thumb src={url} alt={name} aspect="landscape" />}
                     {name && <h1>{`${name}`}</h1>}
                     {title && <h1>{`${title}`}</h1>}
                     {body && <p>{`${body}`}</p>}
                     {mail && <p>{`Mail: ${mail}`}</p>}
-                    <br />
                </div>
-
-               <br />
           </>
      )
 }
