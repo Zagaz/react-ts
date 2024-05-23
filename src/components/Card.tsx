@@ -11,12 +11,9 @@ interface CardProps {
      url?: string
      aspect?: 'square' | 'landscape' | 'portrait'
 }
-
-const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url, aspect }) => {
+const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url }) => {
      // temp string aspect 
      var aspectString: string = "square";
-
-
      return (
           <>
                <div className={`card id-card-${id}`}>
@@ -29,5 +26,4 @@ const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url, aspect })
           </>
      )
 }
-
 export default Card
