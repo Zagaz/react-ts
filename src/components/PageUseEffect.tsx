@@ -30,6 +30,7 @@ export default function PageUseEffect() {
                     <Button onClick={() => setResourceType('posts')}>Posts</Button>
                     <Button onClick={() => setResourceType('comments')}>Comments</Button>
                     <Button onClick={() => setResourceType('users')}>Users</Button>
+                    <Button onClick={() => setResourceType('photos')}>Photos</Button>
                </div>
                <div className='page-title'>
                     <h1>{resourceType}</h1>
@@ -70,6 +71,18 @@ export default function PageUseEffect() {
                                    <>
 
                                         <Card key={item.id} name={item.name} mail={item.email}
+                                        />
+                                   </>
+                              )
+                         }
+                         )
+                    }
+                    {
+                         resourceType === 'photos' && items.map((item: any) => {
+                              return (
+                                   <>
+
+                                        <Card key={item.id} name={item.title} thumb={item.thumbnailUrl}
                                         />
                                    </>
                               )

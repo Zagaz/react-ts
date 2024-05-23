@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ id, name, title, body, mail,thumb }) => {
      return (
           <>
                <div className={`card id-card-${id}`}>
-                    {thumb && <img src={thumb} alt=""/>}
+                    {thumb && <img className = "card-thumb" src={thumb} alt=""/>}
               
                     {name && <h1>{`${name}`}</h1>}
                     {title && <h1>{`${title}`}</h1>}
