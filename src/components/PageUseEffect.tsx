@@ -27,9 +27,11 @@ export default function PageUseEffect() {
      return (
           <div>
                <div className='buttons-container'>
+              
+
                     <Button onClick={() => setResourceType('posts')}>Posts</Button> 
-                    <Button onClick={() => setResourceType('posts')}>Posts</Button>
-                    <Button onClick={() => setResourceType('posts')}>Posts</Button>
+                    <Button onClick={() => setResourceType('comments')}>Comments</Button>
+                    <Button onClick={() => setResourceType('users')}>Users</Button>
                </div>
                <div className='page-title'>
                     <h1>{resourceType}</h1>
