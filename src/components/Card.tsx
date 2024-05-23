@@ -6,13 +6,15 @@ interface CardProps {
      title?: string
      body?: string
      mail?: string
+     thumb?: string
 
 }
 
-const Card: React.FC<CardProps> = ({ id, name, title, body, mail }) => {
+const Card: React.FC<CardProps> = ({ id, name, title, body, mail,thumb }) => {
      return (
           <>
                <div className={`card id-card-${id}`}>
+                    {thumb && <img src={thumb} alt=""/>}
               
                     {name && <h1>{`${name}`}</h1>}
                     {title && <h1>{`${title}`}</h1>}

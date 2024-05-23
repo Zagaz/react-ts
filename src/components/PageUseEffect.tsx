@@ -27,9 +27,7 @@ export default function PageUseEffect() {
      return (
           <div>
                <div className='buttons-container'>
-              
-
-                    <Button onClick={() => setResourceType('posts')}>Posts</Button> 
+                    <Button onClick={() => setResourceType('posts')}>Posts</Button>
                     <Button onClick={() => setResourceType('comments')}>Comments</Button>
                     <Button onClick={() => setResourceType('users')}>Users</Button>
                </div>
@@ -37,8 +35,7 @@ export default function PageUseEffect() {
                     <h1>{resourceType}</h1>
                </div>
                <div className='card-container'>
-                  
-
+                 
                     {
                          resourceType === 'posts' && items.map((item: any) => {
                               return (
@@ -51,7 +48,8 @@ export default function PageUseEffect() {
 
                               )
                          }
-                         )}
+                         )
+                    }
 
                     {
                          resourceType === 'users' && items.map((item: any) => {
@@ -63,7 +61,8 @@ export default function PageUseEffect() {
                                    </>
                               )
                          }
-                         )}
+                         )
+                    }
 
                     {
                          resourceType === 'comments' && items.map((item: any) => {
