@@ -1,16 +1,18 @@
 import React from 'react'
 
+
 interface thumbProps{
      src : string
      alt ?: string
-     style ?: string
+     style ?: "square" | "portrait" | "landscape" 
 
 
 }
 
 const Thumb: React.FC<thumbProps> = ({ src, alt, style }) => {
      return (
-         <img className={`thumb thumb-${style}`} src={src} alt={alt}/>
+          <img className={`thumb-style-${!style ? "portrait" : style}`} 
+          src={src} alt={alt}/>
      )
 }
 
