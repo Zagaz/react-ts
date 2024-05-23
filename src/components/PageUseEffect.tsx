@@ -7,10 +7,37 @@ export default function PageUseEffect() {
      const [items, setItems] = useState([])
    
      useEffect(() => {
-       fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-         .then(response => response.json())
-         .then(json => setItems(json))
+          fetchAPI();
+          
      }, [resourceType])
+     
+     async function fetchAPI(){
+          let url = `https://jsonplaceholder.typicode.com/${resourceType}`;
+          // const asyncResponse = await fetch (url)
+          // const response = await asyncResponse.json()
+          // setItems(response)
+
+          try {
+               const asyncResponse = await fetch (url)
+               const response = await asyncResponse.json()
+               setItems(response)
+     
+               
+          } catch (e) {
+
+               console.log("error")
+               console.log(e)
+             
+               
+          }
+
+       
+
+
+     
+
+
+     }
   return (
      <div>
      <div className='buttons-container'>
