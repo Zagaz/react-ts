@@ -1,6 +1,8 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import Card from './Card'
+import { useEffect, useState } from 'react';
+import Card from './Card';
+import Button from './Button';
+
 
 export default function PageUseEffect() {
      const [resourceType, setResourceType] = useState<string>('posts')
@@ -25,14 +27,16 @@ export default function PageUseEffect() {
      return (
           <div>
                <div className='buttons-container'>
-                    <button onClick={() => setResourceType('posts')}> Posts </button>
-                    <button onClick={() => setResourceType('users')}> Users </button>
-                    <button onClick={() => setResourceType('comments')}> Comments </button>
+                    <Button onClick={() => setResourceType('posts')}>Posts</Button> 
+                    <Button onClick={() => setResourceType('posts')}>Posts</Button>
+                    <Button onClick={() => setResourceType('posts')}>Posts</Button>
                </div>
                <div className='page-title'>
                     <h1>{resourceType}</h1>
                </div>
                <div className='card-container'>
+                  
+
                     {
                          resourceType === 'posts' && items.map((item: any) => {
                               return (
