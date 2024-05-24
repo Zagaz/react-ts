@@ -3,13 +3,16 @@ import Card from "./Card";
 import Button from "./Button";
 
 export default function PageUseEffect() {
+     //
   const [resourceType, setResourceType] = useState<string>("posts");
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+     // Call function fetch asynch data from API
     fetchAPI();
   }, [resourceType]);
 
+  // Function to fetch data from API
   async function fetchAPI() {
     let url = `https://jsonplaceholder.typicode.com/${resourceType}`;
     try {
@@ -20,28 +23,11 @@ export default function PageUseEffect() {
       alert("Error: " + e.message);
     }
   }
-
+// Function to change the item 'resourceType' (posts, users, comments, photos)
   function changeItem(item: string): void {
     setResourceType(item);
   }
-  function renderCards(resourceType: string, items: any[]) {
-    switch (resourceType) {
-      case "posts":
-        return items.map((item: any) => (
-          <Card key={item.id} title={item.title} body={item.body} />
-        ));
-      case "users":
-        return items.map((item: any) => (
-          <Card key={item.id} name={item.name} mail={item.email} />
-        ));
-      case "comments":
-        return items.map((item: any) => (
-          <Card key={item.id} name={item.name} mail={item.email} />
-        ));
-      default:
-        return null;
-    }
-  }
+// Array of items to create the buttons
   let btItems: [string, string][];
   btItems = [
     ["posts", "Posts"],
@@ -52,7 +38,9 @@ export default function PageUseEffect() {
   return (
     <div>
       <div className="buttons-container">
-        {btItems.map((item: [string, string]) => {
+        {
+          /** Render Buttons */
+        btItems.map((item: [string, string]) => {
           return (
             <Button key={item[0]} onClick={() => changeItem(item[0])}>
               {" "}
@@ -66,6 +54,8 @@ export default function PageUseEffect() {
           {resourceType === "albums/100/photos" ? "photos" : resourceType}
         </h1>
       </div>
+      {/** Render Cards */}
+      {/** Depending on the resourceType, the card will have different data */}
       <div className="card-container">
         {resourceType === "posts" &&
           items.map((item: any) => {
