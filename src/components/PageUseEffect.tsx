@@ -60,9 +60,6 @@ export default function PageUseEffect() {
   }
 }
 
-
-
-
 // Array of items to create the buttons
   let btItems: [string, string][];
   btItems = [
