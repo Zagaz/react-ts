@@ -3,20 +3,23 @@ import Card from "./Card";
 import Button from "./Button";
 
 export default function PageUseEffect() {
-     //
+  // constant url string type
+
+  const  url: string = "https://jsonplaceholder.typicode.com/";
+
   const [resourceType, setResourceType] = useState<string>("posts");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<any>([]);
 
   useEffect(() => {
-     // Call function fetch asynch data from API
+     // Call function fetch asynch data from API when the component is mounted and when the resourceType state changes.
     fetchAPI();
   }, [resourceType]);
 
   // Function to fetch data from API
   async function fetchAPI() {
-    let url = `https://jsonplaceholder.typicode.com/${resourceType}`;
+    
     try {
-      const asyncResponse = await fetch(url);
+      const asyncResponse = await fetch(url + resourceType);
       const response = await asyncResponse.json();
       setItems(response);
     } catch (e: any) {
@@ -28,6 +31,7 @@ export default function PageUseEffect() {
     setResourceType(item);
   }
 
+  
   // Function to generate the card depending on the resourceType selected.
   function generateCard() {
   switch (resourceType) {
