@@ -7,11 +7,9 @@ interface thumbProps{
      src : string
      alt ?: string
      aspect?: "square" | "portrait" | "landscape"
-
-
 }
 
-const Thumb: React.FC<thumbProps> = ({ src, alt,  aspect }) => {
+const Thumb: React.FC<thumbProps> = ({ src, alt, aspect }) => {
      return (
           <img src={src} alt={alt} className={`thumb thumb-aspect-${aspect}`} />
      )
