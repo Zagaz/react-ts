@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url }) => {
     <div className={`card id-card-${id}`}>
       {url && <Thumb src={url} alt={name} aspect="landscape" />}
       {name && <h2>{name}</h2>}
-      {title && <h2>{title}</h2>}
+      {title && <h2> {title}</h2>}
       {body && <p>{body}</p>}
       {mail && <p>Mail: {mail}</p>}
     </div>
