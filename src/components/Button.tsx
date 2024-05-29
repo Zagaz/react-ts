@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react';
 
 interface ButtonProps{
      style?: "success" | "danger" | "warning" | "info" | "black" | "white" | "grey"
-     onClick: () => string | void;
+     onClick: MouseEventHandler;
      children : React.ReactNode;
 }
 
