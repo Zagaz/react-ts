@@ -23,10 +23,42 @@ export default function PageUseEffect() {
       alert("Error: " + e.message);
     }
   }
-// Function to change the item 'resourceType' (posts, users, comments, photos)
+  // Function to change the resourceType state with the item selected.
   function changeItem(item: string): void {
     setResourceType(item);
   }
+
+  // Function to generate the card depending on the resourceType selected.
+  function generateCard() {
+  switch (resourceType) {
+    case "posts":
+      return items.map((item: any) => {
+        return <Card key={item.id} title={item.title} body={item.body} />;
+      });
+    case "users":
+      return items.map((item: any) => {
+        return <Card key={item.id} name={item.name} mail={item.email} />;
+      });
+    case "comments":
+      return items.map((item: any) => {
+        return <Card key={item.id} name={item.name} mail={item.email} />;
+      });
+    case "albums/100/photos":
+      return items.map((item: any) => {
+        return (
+          <Card key={item.id} url={item.thumbnailUrl} name={item.title} />
+        );
+      });
+    default:
+      return items.map((item: any) => {
+        return <Card key={item.id} title={item.title} body={item.body} />;
+      });
+  }
+}
+
+
+
+
 // Array of items to create the buttons
   let btItems: [string, string][];
   btItems = [
@@ -35,6 +67,7 @@ export default function PageUseEffect() {
     ["users", "Users"],
     ["albums/100/photos", "Photos"],
   ];
+
   return (
     <div>
       <div className="buttons-container">
@@ -51,32 +84,15 @@ export default function PageUseEffect() {
       </div>
       <div className="page-title">
         <h1>
-          {resourceType === "albums/100/photos" ? "photos" : resourceType}
+          {
+          resourceType === "albums/100/photos" ? "photos" : resourceType
+          }
         </h1>
       </div>
       {/** Render Cards */}
       {/** Depending on the resourceType, the card will have different data */}
       <div className="card-container">
-        {resourceType === "posts" &&
-          items.map((item: any) => {
-            return <Card key={item.id} title={item.title} body={item.body} />;
-          })}
-
-        {resourceType === "users" &&
-          items.map((item: any) => {
-            return <Card key={item.id} name={item.name} mail={item.email} />;
-          })}
-
-        {resourceType === "comments" &&
-          items.map((item: any) => {
-            return <Card key={item.id} name={item.name} mail={item.email} />;
-          })}
-        {resourceType === "albums/100/photos" &&
-          items.map((item: any) => {
-            return (
-              <Card key={item.id} url={item.thumbnailUrl} name={item.title} />
-            );
-          })}
+        {generateCard()}
       </div>
     </div>
   );
