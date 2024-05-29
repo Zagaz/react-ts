@@ -30,7 +30,6 @@ export default function PageUseEffect() {
   function changeItem(item: string): void {
     setResourceType(item);
   }
-
   
   // Function to generate the card depending on the resourceType selected.
   function generateCard() {
