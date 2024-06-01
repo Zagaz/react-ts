@@ -9,6 +9,7 @@ export default function PageUseEffect() {
 
   const [resourceType, setResourceType] = useState<string>("posts");
   const [items, setItems] = useState<any>([]);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     // Call function fetch asynch data from API when the component is mounted and when the resourceType state changes.
@@ -22,8 +23,27 @@ export default function PageUseEffect() {
       const asyncResponse = await fetch(url + resourceType);
       const response = await asyncResponse.json();
       setItems(response);
+  
+    // Network error
+
+    if (response === undefined) {
+      throw new Error("Network Error");
+    }
+
+  // Error 404
+    if (response.status === 404) {
+      throw new Error("Request failed with status code 404");
+    }
+
+    // Error 500
+
+    if (response.status === 500) {
+      throw new Error("Request failed with status code 500");
+    }
+
     } catch (e: any) {
-      alert("Error: " + e.message);
+     setError(e.message);
+  
     }
   }
   // Function to change the resourceType state with the item selected.
@@ -83,6 +103,9 @@ export default function PageUseEffect() {
           })}
       </div>
       <div className="page-title">
+       {
+        error && <div className="error">Error Message: <br /> {error}. Please contact admistrator</div>
+       }
         <h1>
           {
             resourceType === "albums/100/photos" ? "photos" : resourceType
