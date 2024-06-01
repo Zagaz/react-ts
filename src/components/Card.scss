@@ -1,0 +1,84 @@
+$transparent: rgba(#ffffff, 0);
+$color1: #1f1f1f;
+$color2: #757775;
+$color3: #4aff71;
+$color4: #dededf;
+$color5: #f3f2a4;
+$color6: #fff;
+
+@mixin card-style {
+  background-color: $color1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.card {
+  &.card-posts {
+    @include card-style;
+    .card-title {
+      color: $color3 !important;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: $transparent;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+    p {
+      color: $color6;
+      background-color: $transparent;
+    }
+  }
+  &.card-posts:hover, &.card-comments:hover, &.card-users:hover, &.card-photos:hover {
+    box-shadow: 0 0 20px 0 rgb(255, 255, 255);
+  }
+  &.card-comments {
+    @include card-style;
+    background-color: $color2;
+    .card-name {
+      color: $color4;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: $transparent;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+    .card-email {
+      color: $color5;
+      background-color: $transparent;
+    }
+  }
+
+  &.card-users {
+    @include card-style;
+    .card-name {
+      color: $color4 !important;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: $transparent;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+    .card-email {
+      color: $color5;
+      background-color: $transparent;
+    }
+  }
+  &.card-photos {
+    @include card-style;
+    .card-title {
+          color: $color2;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: $transparent;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+    p {
+      color: $color6;
+      background-color: $transparent;
+    }
+  }
+}
