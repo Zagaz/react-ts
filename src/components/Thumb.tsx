@@ -1,11 +1,10 @@
 import React from 'react'
-// import '../index.css'
 import '../index.css'
 
 
-interface thumbProps{
-     src : string
-     alt ?: string
+type thumbProps = {
+     src: string
+     alt?: string
      aspect?: "square" | "portrait" | "landscape"
 }
 
