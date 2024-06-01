@@ -9,7 +9,7 @@ type CardProps = {
   url?: string;
 }
 
-const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url }) => {
+export const Card = ({ id , name , title , body , mail , url  }: CardProps) => {
   return (
     <div className={`card id-card-${id}`}>
       {url && <Thumb src={url} alt={name} aspect="landscape" />}
@@ -21,4 +21,3 @@ const Card: React.FC<CardProps> = ({ id, name, title, body, mail, url }) => {
   );
 }
 
-export default Card;
