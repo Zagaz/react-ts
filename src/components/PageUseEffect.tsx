@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
-import Button from "./Button";
+import { Card } from "./Card";
+import { Button } from "./Button";
 
 export default function PageUseEffect() {
   // constant url string type
@@ -23,27 +23,27 @@ export default function PageUseEffect() {
       const asyncResponse = await fetch(url + resourceType);
       const response = await asyncResponse.json();
       setItems(response);
-  
-    // Network error
 
-    if (response === undefined) {
-      throw new Error("Network Error");
-    }
+      // Network error
 
-  // Error 404
-    if (response.status === 404) {
-      throw new Error("Request failed with status code 404");
-    }
+      if (response === undefined) {
+        throw new Error("Network Error");
+      }
 
-    // Error 500
+      // Error 404
+      if (response.status === 404) {
+        throw new Error("Request failed with status code 404");
+      }
 
-    if (response.status === 500) {
-      throw new Error("Request failed with status code 500");
-    }
+      // Error 500
+
+      if (response.status === 500) {
+        throw new Error("Request failed with status code 500");
+      }
 
     } catch (e: any) {
-     setError(e.message);
-  
+      setError(e.message);
+
     }
   }
   // Function to change the resourceType state with the item selected.
@@ -103,9 +103,9 @@ export default function PageUseEffect() {
           })}
       </div>
       <div className="page-title">
-       {
-        error && <div className="error">Error Message: <br /> {error}. Please contact admistrator</div>
-       }
+        {
+          error && <div className="error">Error Message: <br /> {error}. Please contact admistrator</div>
+        }
         <h1>
           {
             resourceType === "albums/100/photos" ? "photos" : resourceType

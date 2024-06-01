@@ -6,13 +6,13 @@ type ButtonProps = {
     children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ style, onClick, children }) => {
+export const Button  = ({ style, onClick, children }:ButtonProps) => {
     return (
         <button className={`button-style-${!style ? "grey" : style}`}
             onClick={onClick}>{children}</button>
     )
 }
-export default Button;
+
 
 
 
