@@ -104,7 +104,7 @@ export default function PageUseEffect() {
       </div>
       <div className="page-title">
        {
-        error && <p>Error Message: {error}</p>
+        error && <div className="error">Error Message: <br /> {error}. Please contact admistrator</div>
        }
         <h1>
           {
