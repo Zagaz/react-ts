@@ -44,6 +44,7 @@ export default function PageUseEffect() {
     } catch (e: any) {
       setError(e.message);
 
+
     }
   }
   // Function to change the resourceType state with the item selected.
@@ -56,25 +57,25 @@ export default function PageUseEffect() {
     switch (resourceType) {
       case "posts":
         return items.map((item: any) => {
-          return <Card key={item.id} title={item.title} body={item.body} />;
+          return <Card key={item.id} type={resourceType} title={item.title} body={item.body} />;
         });
       case "users":
         return items.map((item: any) => {
-          return <Card key={item.id} name={item.name} mail={item.email} />;
+          return <Card key={item.id} type={resourceType} name={item.name} mail={item.email} />;
         });
       case "comments":
         return items.map((item: any) => {
-          return <Card key={item.id} name={item.name} mail={item.email} />;
+          return <Card key={item.id} type={resourceType} name={item.name} mail={item.email} />;
         });
       case "albums/100/photos":
         return items.map((item: any) => {
           return (
-            <Card key={item.id} url={item.thumbnailUrl} name={item.title} />
+            <Card key={item.id} type={resourceType} url={item.thumbnailUrl} name={item.title} />
           );
         });
       default:
         return items.map((item: any) => {
-          return <Card key={item.id} title={item.title} body={item.body} />;
+          return <Card key={item.id} type={resourceType} title={item.title} body={item.body} />;
         });
     }
   }
