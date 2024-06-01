@@ -1,7 +1,6 @@
 import React from 'react';
 import Thumb from './Thumb';
-
-interface CardProps {
+type CardProps = {
   id?: number;
   name?: string;
   title?: string;
