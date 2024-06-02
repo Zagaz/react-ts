@@ -1,9 +1,9 @@
-import PageUseEffect from './components/PageUseEffect'
+import Page from './components/PageUseEffect'
 
 function App() {
 
   return (<>
-    <PageUseEffect />
+    <Page />
   </>
   )
 }
